@@ -32,7 +32,10 @@ This variable will hold all the text strings for the language #}
 {% include "partials/header.html" %}
 
 <body{% if lang in rtl_languages %} dir="rtl"{% endif %}{% if config.extra.override_serif_with_sans %} class="use-sans-serif"{% endif %}>
+    {% block main_nav %}
     {% include "partials/nav.html" %}
+    {% endblock main_nav %}
+    
     <div class="content">
 
         {# Post page is the default #}
@@ -40,7 +43,10 @@ This variable will hold all the text strings for the language #}
             Nothing here?!
         {% endblock main_content %}
     </div>
+    
+    {% block main_footer %}
     {% include "partials/footer.html" %}
+    {% endblock main_footer %}
 </body>
 
 </html>
