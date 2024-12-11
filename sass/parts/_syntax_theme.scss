@@ -316,10 +316,10 @@
 }
 
 .z-meta.z-diff {
-    color: --OVERLAY0;
+    color: var(--overlay0);
 
     &.z-header {
-        color: --OVERLAY0;
+        color: var(--overlay0);
     }
 }
 
