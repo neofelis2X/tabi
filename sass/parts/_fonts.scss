@@ -1,0 +1,32 @@
+
+@font-face {
+    font-family: 'Monda';
+    src: local("Monda"),
+        url('fonts/monda-var.woff2') format("woff2"),
+        url('fonts/monda-var.woff') format("woff"),
+        url('fonts/monda-var.ttf') format("truetype");
+    font-style: normal;
+    font-weight: 200 700;
+    font-optical-sizing: auto;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maven Pro';
+    src: local('Maven Pro'),
+        url('fonts/maven-pro-var.woff2') format("woff2"),
+        url('fonts/maven-pro-var.woff') format("woff"),
+        url('fonts/maven-pro-var.ttf') format("truetype");
+    font-style: normal;
+    font-weight: 200 700;
+    font-optical-sizing: auto;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cascadia Code';
+    src: local('Cascadia Code'),
+        url('fonts/CascadiaCode-SemiLight.woff2') format("woff2");
+    font-display: swap;
+}
+
