@@ -1,0 +1,70 @@
+
+@font-face {
+    font-family: 'Title Font';
+    src: local("Radio Canada"),
+        url('fonts/radio-canada-var.woff2') format("woff2"),
+        url('fonts/radio-canada-var.ttf') format("truetype");
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Font';
+    src: local("Radio Canada"),
+        url('fonts/radio-canada-italic-var.woff2') format("woff2"),
+        url('fonts/radio-canada-italic-var.ttf') format("truetype");
+    font-style: italic;
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+// This Font Software is licensed under the SIL Open Font License, Version 1.1.
+// This license is available with a FAQ at http://scripts.sil.org/OFL
+// https://github.com/googlefonts/radiocanadadisplay
+
+@font-face {
+    font-family: 'Text Font';
+    src: local('Red Hat Text'),
+        url('fonts/redhat-text-var.woff2') format("woff2"),
+        url('fonts/redhat-text-var.ttf') format("truetype");
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Text Font';
+    src: local('Red Hat Text Italic'),
+        url('fonts/redhat-text-italic-var.woff2') format("woff2"),
+        url('fonts/redhat-text-italic-var.ttf') format("truetype");
+    font-style: italic;
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+// Licensed under the SIL Open Font License, Version 1.1, with Reserved Font Name Red Hat.
+// Copyright 2021 Red Hat, Inc.
+
+@font-face {
+    font-family: 'Code Font';
+    //font-family: 'Iosevka Term Web';
+    font-display: swap;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    src: url('fonts/IosevkaTerm-Light.woff2') format('woff2'),
+        url('fonts/IosevkaTerm-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Code Font';
+    //font-family: 'Iosevka Term Web';
+    font-display: swap;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: italic;
+    src: url('fonts/IosevkaTerm-LightItalic.woff2') format('woff2'),
+        url('fonts/IosevkaTerm-LightItalic.ttf') format('truetype');
+}
+

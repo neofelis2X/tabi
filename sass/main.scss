@@ -1,3 +1,5 @@
+
+@use 'parts/_fonts.scss';
 @use 'parts/_admonitions.scss';
 @use 'parts/_archive.scss';
 @use 'parts/_aside.scss';
@@ -23,30 +25,6 @@
 @use 'parts/_tags.scss';
 @use 'parts/_theme-switch.scss';
 @use 'parts/_zola-error.scss';
-
-@font-face {
-    src: local('Inter'),
-        url('fonts/Inter4.woff2') format("woff2");
-    /* Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Inter';
-    font-display: swap;
-}
-
-@font-face {
-    src: local('Source Serif'),
-        url('fonts/SourceSerif4Variable-Roman.ttf.woff2') format("woff2");
-    /* Copyright 2014 - 2023 Adobe (http://www.adobe.com/), with Reserved Font Name ‘Source’.adobe.com/). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Source Serif';
-    font-display: swap;
-}
-
-@font-face {
-    src: local('Cascadia Code'),
-        url('fonts/CascadiaCode-SemiLight.woff2') format("woff2");
-    /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Cascadia Code';
-    font-display: swap;
-}
 
 @mixin theme-variables($theme) {
     @if $theme =='light' {
@@ -95,9 +73,10 @@
     --small-layout-width: 200px;
     --paragraph-spacing: max(2.3vmin, 24px);
 
-    --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
-    --serif-font: 'Source Serif', 'Georgia', serif;
-    --code-font: 'Cascadia Code';
+    --sans-serif-font: 'Title Font', Helvetica, Arial, sans-serif;
+    --serif-font: 'Text Font', 'Georgia', serif;
+    --code-font: 'Code Font', monospace;
+    font-optical-sizing: auto;
 
     scrollbar-color: var(--primary-color) transparent;
     accent-color: var(--primary-color);
