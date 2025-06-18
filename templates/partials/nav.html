@@ -19,7 +19,13 @@
                                         <a class="nav-links no-hover-padding" href="{{ menu.url }}">
                                     {%- endif -%}
                                 {%- else -%}
-                                    <a class="nav-links no-hover-padding" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}">
+                                    {% set navsec = current_path | default(value='/none/') | split(pat="/") %}
+                                    {%- if navsec[1] | title == menu.name %}
+                                        {% set emph_class = " nav-emphasised"%}
+                                    {% else %}
+                                        {% set emph_class = ""%}
+                                    {%- endif -%}
+                                    <a class="nav-links no-hover-padding{{ emph_class }}" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}">
                                 {%- endif -%}
                                 {{ macros_translate::translate(key=menu.name, default=menu.name, language_strings=language_strings) }}
                                 </a>
