@@ -60,8 +60,8 @@
             <div class="card-info">
                 <h2 class="card-title">{{ page.title | markdown(inline=true) | safe }}</h2>
                 <div class="card-description">
-                    {% if page.description %}
-                        {{ page.description | markdown(inline=true) | safe }}
+                    {% if page.year %}
+                        <time datetime="{{ page.year | safe }}">{{ page.year | safe }}</time>
                     {% endif %}
                 </div>
             </div>
