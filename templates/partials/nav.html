@@ -1,7 +1,8 @@
 <header>
     <nav class="navbar">
         <div class="nav-title">
-            <a class="home-title" href="{{ get_url(path='/', lang=lang, trailing_slash=(lang == config.default_language)) }}">{{ config.title }}</a>
+            <a class="home-title" href="{{ get_url(path='/', lang=lang, trailing_slash=(lang == config.default_language)) }}">{{ config.extra.home_title }}</a>
+            <p class="home-subtitle">{{ config.extra.home_subtitle | safe }}</p>
         </div>
 
         {%- if config.extra.menu %}
