@@ -7,7 +7,8 @@
 {%- set page_or_section = section -%}
 {%- if page -%}{%- set page_or_section = page -%}{%- endif -%}
 
-{{< page_header title={page_or_section.title} />}}
+{# The page title is hidden for the about page #}
+{#{< page_header title={page_or_section.title} />}#}
 
 <div id="page-content">
     <main>
