@@ -6,7 +6,8 @@
 
 {%- set page_or_section = page | default(value=section) -%}
 
-{{ macros_page_header::page_header(title=page_or_section.title) }}
+{# The page title is hidden for the about page #}
+{#{ macros_page_header::page_header(title=page_or_section.title) }#}
 
 <div id="page-content">
     <main>
