@@ -5,7 +5,7 @@
     {% if page.taxonomies %}
         {% for tax_name, terms in page.taxonomies %}
             {% for term in terms %}
-                {% set_global all_terms = all_terms | concat(with=term) %}
+                {% set_global all_terms = all_terms | concat(with=tax_name ~ '|' ~ term) %}
             {% endfor %}
         {% endfor %}
     {% endif %}
@@ -25,8 +25,9 @@
         {% for term in unique_terms %}
             <li class="taxonomy-item no-hover-padding">
                 <a class="no-hover-padding"
-                href="{{ get_taxonomy_url(kind="tags", name=term, lang=lang) }}"
-                data-filter="{{ term | lower }}">{{ term }}</a>
+                {% set term = term | split(pat='|') %}
+                href="{{ get_taxonomy_url(kind=term.0, name=term.1, lang=lang) }}"
+                data-filter="{{ term.1 | lower }}">{{ term.1 }}</a>
             </li>
         {% endfor %}
     </ul>
