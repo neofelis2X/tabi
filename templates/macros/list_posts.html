@@ -80,7 +80,8 @@
 
                         {%- if show_date or show_updated -%}
                             {%- if show_date -%}
-                                <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
+                                {%- set card_date = macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) | split(pat=' ') -%}
+                                <li class="date">{{- card_date[0] -}}&nbsp;{{- card_date[1] -}}</li>
                             {%- endif -%}
                             {%- if show_date and show_updated -%}
                                 <li class="mobile-only separator">{{- separator -}}</li>
