@@ -170,11 +170,12 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {#- Tags -#}
             {%- if page.taxonomies and page.taxonomies.tags -%}
                 {%- set tags_label = language_strings["tags"] | default(value="tags") -%}
-                <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- tags_label | capitalize -}}:&nbsp;</li>
+                &nbsp;&nbsp;|&nbsp;
+                {#-<li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- tags_label | capitalize -}}:&nbsp;</li>-#}
                 {%- for tag in page.taxonomies.tags -%}
-                    <li class="tag"><a class="p-category" href="{{ get_taxonomy_url(kind='tags', term=tag, lang=lang) | safe }}">{{ tag }}</a>
+                    <li class=""><a class="tag p-category" href="{{ get_taxonomy_url(kind='tags', term=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
-                        ,&nbsp;
+                        &nbsp;
                     {%- endif -%}
                     </li>
                 {%- endfor -%}
@@ -195,6 +196,24 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                     <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a class="external" href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ see_changes_label }}</a></li>
                 {%- endif -%}
             {% endif %}
+        </ul>
+
+        {% if page.extra.caption %}
+            <div class="caption">
+                <h4>{{ page.extra.caption }}</h4>
+            </div>
+        {% endif %}
+
+        <ul class="meta software-tags">
+            {%- if page.taxonomies and page.taxonomies.software -%}
+                {%- for app in page.taxonomies.software -%}
+                    <li><a href={{ get_taxonomy_url(kind='software', name=app, lang=lang) | safe }}>{{ app }}</a>
+                    {%- if not loop.last -%}
+                        &nbsp|&nbsp;
+                    {%- endif -%}
+                    </li>
+                {%- endfor -%}
+            {%- endif -%}
         </ul>
 
         {#- A page is part of a series if one of the sections above (whether it is transparent or not) has the `extra.series` parameter set to true. -#}
