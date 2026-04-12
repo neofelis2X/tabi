@@ -197,7 +197,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- for app in page.taxonomies.software -%}
                     <li><a href={{ get_taxonomy_url(kind='software', name=app, lang=lang) | safe }}>{{ app }}</a>
                     {%- if not loop.last -%}
-                        &nbsp|&nbsp;
+                        &nbsp;|&nbsp;
                     {%- endif -%}
                     </li>
                 {%- endfor -%}
