@@ -66,7 +66,8 @@
                         <li class="index-label">{{ post_index }}</li>
                     {%- endif -%}
 
-                    {%- if "dates" in metadata -%}
+                    {# date has been turned OFF #}
+                    {%- if false and "dates" in metadata -%}
                         {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
                         {#- Calling the hierarchy macro here causes an error due to the "get parents" part of the macro. -#}
                         {#- This seems cleaner. -#}
